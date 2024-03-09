@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:stack_overflow_app/ui/widget/button_widget.dart';
 
 class FilterOverlay extends StatefulWidget {
@@ -31,13 +32,13 @@ class FilterOverlay extends StatefulWidget {
 class _FilterOverlayState extends State<FilterOverlay> {
   String? selectedSort;
   String? selectedOrder;
-  int? pageSize;
+  TextEditingController? pageSize;
 
   /// Constructor for the [_FilterOverlayState].
   _FilterOverlayState(int? pageSize, String? order, String? sort) {
     selectedSort = sort ?? 'activity';
     selectedOrder = order ?? 'desc';
-    this.pageSize = pageSize ?? 10;
+    this.pageSize = TextEditingController(text: '${pageSize ?? 10}');
   }
 
   @override
@@ -166,8 +167,7 @@ class _FilterOverlayState extends State<FilterOverlay> {
                         height: 40,
                         width: 100,
                         child: TextField(
-                          controller:
-                              TextEditingController(text: pageSize.toString()),
+                          controller: pageSize,
                           keyboardType: TextInputType.number,
                           style: Theme.of(context)
                               .textTheme
@@ -180,9 +180,9 @@ class _FilterOverlayState extends State<FilterOverlay> {
                               contentPadding:
                                   EdgeInsets.fromLTRB(10, 0, 10, 0)),
                           onChanged: (value) {
-                            setState(() {
-                              pageSize = int.tryParse(value) ?? 10;
-                            });
+                            final previousCursorPosition = pageSize?.selection;
+                            pageSize?.text = value;
+                            pageSize?.selection = previousCursorPosition!;
                           },
                         ),
                       ),
@@ -195,8 +195,8 @@ class _FilterOverlayState extends State<FilterOverlay> {
                       ButtonWidget(
                         buttonText: 'Apply',
                         onChange: () {
-                          widget.applyFilter(
-                              selectedSort, selectedOrder, pageSize);
+                          widget.applyFilter(selectedSort, selectedOrder,
+                              int.parse(pageSize?.text ?? '0'));
                           Navigator.of(context).pop();
                         },
                       ),
