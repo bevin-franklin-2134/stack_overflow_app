@@ -61,7 +61,8 @@ class _FilterOverlayState extends State<FilterOverlay> {
                     children: [
                       Text(
                         'Sort By:',
-                        style: Theme.of(context).textTheme.bodyLarge,
+                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                            color: Theme.of(context).colorScheme.primary),
                       ),
                       Expanded(
                         child: Padding(
@@ -92,7 +93,11 @@ class _FilterOverlayState extends State<FilterOverlay> {
                                     child: Text(value,
                                         style: Theme.of(context)
                                             .textTheme
-                                            .bodyLarge),
+                                            .bodyLarge
+                                            ?.copyWith(
+                                                color: Theme.of(context)
+                                                    .colorScheme
+                                                    .primary)),
                                   );
                                 }).toList(),
                               ),
@@ -101,7 +106,12 @@ class _FilterOverlayState extends State<FilterOverlay> {
                         ),
                       ),
                       Text('Order:',
-                          style: Theme.of(context).textTheme.bodyLarge),
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyLarge
+                              ?.copyWith(
+                                  color:
+                                      Theme.of(context).colorScheme.primary)),
                       Expanded(
                         child: Padding(
                           padding: const EdgeInsets.all(4.0),
@@ -129,7 +139,11 @@ class _FilterOverlayState extends State<FilterOverlay> {
                                     child: Text(value,
                                         style: Theme.of(context)
                                             .textTheme
-                                            .bodyLarge),
+                                            .bodyLarge
+                                            ?.copyWith(
+                                                color: Theme.of(context)
+                                                    .colorScheme
+                                                    .primary)),
                                   );
                                 }).toList(),
                               ),
@@ -145,7 +159,8 @@ class _FilterOverlayState extends State<FilterOverlay> {
                     children: [
                       Text(
                         'Page Size:',
-                        style: Theme.of(context).textTheme.bodyLarge,
+                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                            color: Theme.of(context).colorScheme.primary),
                       ),
                       SizedBox(
                         height: 40,
@@ -154,6 +169,11 @@ class _FilterOverlayState extends State<FilterOverlay> {
                           controller:
                               TextEditingController(text: pageSize.toString()),
                           keyboardType: TextInputType.number,
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyLarge
+                              ?.copyWith(
+                                  color: Theme.of(context).colorScheme.primary),
                           decoration: const InputDecoration(
                               hintText: 'Enter page size',
                               border: OutlineInputBorder(),

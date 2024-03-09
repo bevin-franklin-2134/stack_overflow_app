@@ -24,7 +24,7 @@ class SearchWidget extends StatelessWidget {
         controller.text = val;
         controller.selection = previousCursorPosition;
       },
-      style: Theme.of(context).textTheme.bodyMedium,
+      style: Theme.of(context).textTheme.bodyMedium?.copyWith(color:Theme.of(context).colorScheme.primary ),
       onEditingComplete: handleSearch,
       onFieldSubmitted: (val) {
         handleSearch;
@@ -33,10 +33,10 @@ class SearchWidget extends StatelessWidget {
         suffixIcon: IconButton(
           color: Theme.of(context).primaryColor,
           onPressed: handleSearch,
-          icon: const Icon(Icons.search),
+          icon:  Icon(Icons.search,color:Theme.of(context).colorScheme.primary),
         ),
         hintText: 'Search here...',
-        hintStyle: Theme.of(context).textTheme.bodyMedium,
+        hintStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(color:Theme.of(context).colorScheme.primary ),
         enabledBorder: OutlineInputBorder(
           borderRadius: _buildBorderRadius(),
         ),

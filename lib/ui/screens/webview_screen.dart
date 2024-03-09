@@ -57,7 +57,7 @@ class WebViewScreen extends StatelessWidget {
         ),
         title: Text(
           'Stack Overflow', // Title of the app bar
-          style: Theme.of(context).textTheme.titleLarge, // Apply large title text style
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(color:Theme.of(context).colorScheme.primary ), // Apply large title text style
         ),
       ),
       body: SafeArea(
