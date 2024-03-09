@@ -65,7 +65,14 @@ class MyApp extends StatelessWidget {
                 if (snapshot.connectionState != ConnectionState.done) {
                   // Show a loading indicator if Google Fonts are still loading
                   return Scaffold(
-                    body: Center(child: Image.asset('assets/images/logo.png'),),
+                    body: Center(
+                      child: Image.asset(
+                        'assets/images/logo.png',
+                        height: 50,
+                        width: 50,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
                   );
                 }
                 // Return the child widget once Google Fonts are loaded

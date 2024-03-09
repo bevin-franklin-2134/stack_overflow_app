@@ -25,7 +25,6 @@ if (flutterVersionName == null) {
 android {
     namespace "com.bevin.aovora.stack_overflow_app.stack_overflow_app"
     compileSdk flutter.compileSdkVersion
-    ndkVersion flutter.ndkVersion
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8

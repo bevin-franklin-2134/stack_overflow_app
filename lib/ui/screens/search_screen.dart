@@ -84,7 +84,7 @@ class _SearchScreenState extends State<SearchScreen> {
   void _showOverlay(BuildContext context) {
     showDialog(
       context: context,
-      barrierColor: Theme.of(context).cardColor,
+      barrierColor: Colors.transparent,
       builder: (context) {
         return FilterOverlay(
           sort: sort,
@@ -178,7 +178,7 @@ class _SearchScreenState extends State<SearchScreen> {
               if (state.result != null && items.isEmpty)
                 Text(
                   'No data found',
-                  style: Theme.of(context).textTheme.titleLarge,
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(color:Theme.of(context).colorScheme.primary ),
                 )
             ],
           ),
