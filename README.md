@@ -22,7 +22,7 @@ A brief description of your project's functionality.
 
 Our API documentation uses relative paths for internal links. This means that when you click a link, it will point to another file within the `doc/api` directory, rather than an external URL.
 
-For example, if you see a link for "Other Page" in <p>[The HTML to inject.](doc/api/index.html)</p>`index.html`, clicking it will load the content of `other_page.html` within the same browser window.
+For example, if you see a link for "Other Page" in <p>[App Documentation](doc/api/index.html)</p>`index.html`, clicking it will load the content of `other_page.html` within the same browser window.
 
 **(Optional) If using target="_top" for specific links:**
 
