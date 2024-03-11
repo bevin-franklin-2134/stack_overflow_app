@@ -11,8 +11,8 @@ class WebViewScreen extends StatelessWidget {
   // Constructor to initialize the URL from arguments
   WebViewScreen({
     required LinkedHashMap args, // Arguments passed to the screen
-    Key? key,
-  }) : super(key: key) {
+    super.key,
+  }) {
     if (args.containsKey('url')) {
       url = args['url'];
     }

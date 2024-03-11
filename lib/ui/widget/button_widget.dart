@@ -10,10 +10,10 @@ class ButtonWidget extends StatelessWidget {
 
   /// Constructor for the [ButtonWidget].
   const ButtonWidget({
-    Key? key,
+    super.key,
     required this.buttonText,
     required this.onChange,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

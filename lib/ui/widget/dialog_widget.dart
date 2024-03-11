@@ -14,8 +14,8 @@ class ShowMessage extends StatelessWidget {
   const ShowMessage({
     this.alertType,
     this.message,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

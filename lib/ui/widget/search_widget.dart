@@ -12,8 +12,8 @@ class SearchWidget extends StatelessWidget {
   const SearchWidget({
     required this.controller,
     required this.handleSearch,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

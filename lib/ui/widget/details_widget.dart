@@ -19,11 +19,11 @@ class DetailsWidget extends StatelessWidget {
 
   /// Constructor for the [DetailsWidget].
   const DetailsWidget({
-    Key? key,
+    super.key,
     required this.onChipTap,
     required this.constraints,
     this.item,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -38,10 +38,10 @@ class DetailsWidget extends StatelessWidget {
         margin: const EdgeInsets.all(10),
         color: Colors.white,
         elevation: 2,
-        shadowColor: Theme.of(context).primaryColor.withOpacity(0.5),
+        shadowColor: Theme.of(context).colorScheme.onSurfaceVariant.withOpacity(0.5),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
-          side: BorderSide(color: Theme.of(context).primaryColor),
+          side: BorderSide(color: Theme.of(context).colorScheme.primary),
         ),
         child: Padding(
           padding: const EdgeInsets.all(10.0),

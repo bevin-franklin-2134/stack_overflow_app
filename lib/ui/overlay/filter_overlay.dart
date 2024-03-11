@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:stack_overflow_app/ui/widget/button_widget.dart';
 
 class FilterOverlay extends StatefulWidget {
@@ -17,12 +16,12 @@ class FilterOverlay extends StatefulWidget {
 
   /// Constructor for the [FilterOverlay].
   const FilterOverlay({
-    Key? key,
+    super.key,
     required this.applyFilter,
     this.sort,
     this.pageSize,
     this.order,
-  }) : super(key: key);
+  });
 
   @override
   _FilterOverlayState createState() =>

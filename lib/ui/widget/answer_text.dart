@@ -9,8 +9,7 @@ class AnswerText extends StatelessWidget {
   final bool isAnswered;
 
   /// Constructor for the [AnswerText] widget.
-  const AnswerText({Key? key, required this.count, required this.isAnswered})
-      : super(key: key);
+  const AnswerText({super.key, required this.count, required this.isAnswered});
 
   @override
   Widget build(BuildContext context) {

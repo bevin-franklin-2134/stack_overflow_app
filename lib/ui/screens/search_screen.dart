@@ -54,15 +54,15 @@ class _SearchScreenState extends State<SearchScreen> {
     final scaffold = ScaffoldMessenger.of(context);
     scaffold.showSnackBar(
       SnackBar(
-        backgroundColor: Theme.of(context).dialogBackgroundColor,
+        backgroundColor: Theme.of(context).colorScheme.onSurface,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         content: Text(
           'Load More',
-          style: Theme.of(context).textTheme.titleLarge,
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(color: Theme.of(context).colorScheme.primary),
         ),
         action: SnackBarAction(
             label: 'Click here',
-            textColor: Theme.of(context).primaryColor,
+            textColor: Theme.of(context).colorScheme.inversePrimary,
             onPressed: () {
               scaffold.hideCurrentSnackBar;
               page += 1;
